@@ -1,4 +1,5 @@
 import java.awt.TextField;
+import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -9,99 +10,102 @@ import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
 public class App {
     public static void main(String[] args) {
         JFrame janela = new JFrame();
 
-        // Nome da janela e foto
+        // Cor Laranja
+        Color orangeTheme = new Color(255, 165, 0);
+
+        // Configurações básicas da janela
         janela.setTitle("CADASTRO DE USUÁRIOS");
-        janela.setResizable(true);
+        janela.setResizable(false);
         janela.setLocationRelativeTo(null);
         janela.setIconImage(java.awt.Toolkit.getDefaultToolkit().getImage("src/image.png"));
+        janela.getContentPane().setBackground(new Color(240, 240, 240)); // Fundo cinza claro
         janela.setFocusable(true);
 
-
+        // Título
         JLabel labelTitulo = new JLabel("CADASTRO DE PESSOAS");
-        labelTitulo.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 32));
-        labelTitulo.setBounds(100, 80, 500, 50);
+        labelTitulo.setFont(new java.awt.Font("Arial", java.awt.Font.BOLD, 24));
+        labelTitulo.setBounds(400, 10, 400, 30);
+        labelTitulo.setForeground(orangeTheme);
         janela.add(labelTitulo);
 
+        // Primeira linha (CPF, Data Nascimento, RG)
         JLabel labelcpf = new JLabel("CPF/CNPJ:");
-        labelcpf.setBounds(580, 80, 300, 40);
+        labelcpf.setBounds(20, 50, 80, 20);
         janela.add(labelcpf);
 
-                // Adicionando um campo de cpf/cnpj
         JTextField campocpf = new JTextField();
-        campocpf.setBounds(580, 120, 100, 30);
+        campocpf.setBounds(20, 70, 150, 25);
         janela.add(campocpf);
 
-                // Adicionando um campo de data de nascimento
-        JLabel labelDataNascimento = new JLabel("Data de Nascimento:");
-        labelDataNascimento.setBounds(700, 80, 150, 40);
+        JLabel labelDataNascimento = new JLabel("Data Nasc.:");
+        labelDataNascimento.setBounds(190, 50, 100, 20);
         janela.add(labelDataNascimento);
+        
         JTextField campoDataNascimento = new JTextField();
-        campoDataNascimento.setBounds(700, 120, 150, 30);
+        campoDataNascimento.setBounds(190, 70, 150, 25);
         janela.add(campoDataNascimento);
 
-        
-        JLabel labelrg = new JLabel("Rg:");
-        labelrg.setBounds(870, 80, 400, 40);
+        JLabel labelrg = new JLabel("RG:");
+        labelrg.setBounds(360, 50, 40, 20);
         janela.add(labelrg);
-        // Adicionando um campo de rg
+        
         JTextField camporg = new JTextField();
-        camporg.setBounds(870, 120, 180, 30);
+        camporg.setBounds(360, 70, 150, 25);
         janela.add(camporg);
 
-        // Adicionando um campo de texto
-        JTextField campoTexto = new JTextField();
-        campoTexto.setBounds(100, 200, 1100, 30);
-        janela.add(campoTexto);
-
-        // Definindo o texto do campo de texto
-        JLabel labelTexto2 = new JLabel("Digite seu nome:");
-        labelTexto2.setBounds(100, 160, 150, 40);
+        // Nome
+        JLabel labelTexto2 = new JLabel("Nome Completo:");
+        labelTexto2.setBounds(20, 100, 150, 20);
         janela.add(labelTexto2);
 
-        // Adicionando um campo de senha
-        JPasswordField camposenha = new JPasswordField();
-        camposenha.setBounds(100, 280, 1100, 30);
-        janela.add(camposenha);
+        JTextField campoTexto = new JTextField();
+        campoTexto.setBounds(20, 120, 1160, 25);
+        janela.add(campoTexto);
 
-        // Definindo o texto do campo de senha
-        JLabel labelSenha = new JLabel("Digite sua senha:");
-        labelSenha.setBounds(100, 240, 150, 40);
+        // Senha
+        JLabel labelSenha = new JLabel("Senha:");
+        labelSenha.setBounds(20, 150, 150, 20);
         janela.add(labelSenha);
 
-        // Definindo o texto do campo de email
-        JLabel emaillLabel = new JLabel("Digite seu email:");
-        emaillLabel.setBounds(100, 320, 300, 40);
+        JPasswordField camposenha = new JPasswordField();
+        camposenha.setBounds(20, 170, 1160, 25);
+        janela.add(camposenha);
+
+        // Email
+        JLabel emaillLabel = new JLabel("Email:");
+        emaillLabel.setBounds(20, 200, 300, 20);
         janela.add(emaillLabel);
 
-        // Adicionando um campo de email
         JTextField campoemail = new JTextField();
-        campoemail.setBounds(100, 360, 1100, 30);
+        campoemail.setBounds(20, 220, 1160, 25);
         janela.add(campoemail);
 
-        JLabel labeltelefone = new JLabel("Digite seu telefone:");
-        labeltelefone.setBounds(100, 400, 150, 40);
+        // Telefone
+        JLabel labeltelefone = new JLabel("Telefone:");
+        labeltelefone.setBounds(20, 250, 150, 20);
         janela.add(labeltelefone);
 
-        // Adicionando um campo de telefone
         JTextField campoTelefone = new JTextField();
-        campoTelefone.setBounds(100, 440, 1100, 30);
+        campoTelefone.setBounds(20, 270, 1160, 25);
         janela.add(campoTelefone);
 
-        JLabel labelTexto3 = new JLabel("Digite seu CEP");
-        labelTexto3.setBounds(100, 480, 150, 40);
+        // CEP
+        JLabel labelTexto3 = new JLabel("CEP:");
+        labelTexto3.setBounds(20, 300, 150, 20);
         janela.add(labelTexto3);
 
-        // Adicionando um campo de CEP
         JTextField campoCep = new JTextField();
-        campoCep.setBounds(100, 520, 1100, 30);
+        campoCep.setBounds(20, 320, 200, 25);
         janela.add(campoCep);
 
+        // Estado, Cidade, País
         JComboBox<String> comboBoxEstado = new JComboBox<>();
-        comboBoxEstado.setBounds(100, 560, 200, 30);
+        comboBoxEstado.setBounds(240, 320, 200, 25);
         comboBoxEstado.addItem("Selecione o estado");
         comboBoxEstado.addItem("Acre");
         comboBoxEstado.addItem("Alagoas");
@@ -133,7 +137,7 @@ public class App {
         janela.add(comboBoxEstado);
 
         JComboBox<String> comboBoxCidade = new JComboBox<>();
-        comboBoxCidade.setBounds(320, 560, 200, 30);
+        comboBoxCidade.setBounds(460, 320, 200, 25);
         comboBoxCidade.addItem("Selecione a cidade");
         comboBoxCidade.addItem("Campinas");
         comboBoxCidade.addItem("São Paulo");
@@ -141,7 +145,8 @@ public class App {
         janela.add(comboBoxCidade);
 
         JComboBox<String> comboBoxpais = new JComboBox<>();
-        comboBoxpais.setBounds(540, 560, 200, 30);
+        comboBoxpais.setBounds(680, 320, 200, 25);
+        
         comboBoxpais.addItem("Selecione o país");
         comboBoxpais.addItem("Brasil");
         comboBoxpais.addItem("Estados Unidos");
@@ -176,45 +181,46 @@ public class App {
         comboBoxpais.addItem("Turquia");
         janela.add(comboBoxpais);
 
+        // Endereço (Bairro, Número, Logradouro, Complemento)
         JLabel labelEstado = new JLabel("Bairro:");
-        labelEstado.setBounds(100, 600, 150, 40);
+        labelEstado.setBounds(20, 350, 150, 20);
         janela.add(labelEstado);
-        // Adicionando um campo de bairro
+        
         JTextField campoBairro = new JTextField();
-        campoBairro.setBounds(100, 640, 1100, 30);
+        campoBairro.setBounds(20, 370, 1160, 25);
         janela.add(campoBairro);
 
-        JLabel labelCidade = new JLabel("Numero:");
-        labelCidade.setBounds(100, 680, 150, 40);
+        JLabel labelCidade = new JLabel("Número:");
+        labelCidade.setBounds(20, 400, 150, 20);
         janela.add(labelCidade);
-        // Adicionando um campo de número
+        
         JTextField campoNumero = new JTextField();
-        campoNumero.setBounds(100, 720, 150, 30);
+        campoNumero.setBounds(20, 420, 150, 25);
         janela.add(campoNumero);
 
         JLabel labelPais = new JLabel("Logradouro:");
-        labelPais.setBounds(300, 680, 150, 40);
+        labelPais.setBounds(190, 400, 150, 20);
         janela.add(labelPais);
-        // Adicionando um campo de logradouro
+        
         JTextField campoLogradouro = new JTextField();
-        campoLogradouro.setBounds(300, 720, 150, 30);
+        campoLogradouro.setBounds(190, 420, 250, 25);
         janela.add(campoLogradouro);
 
         JLabel labelPais2 = new JLabel("Complemento:");
-        labelPais2.setBounds(500, 680, 150, 40);
+        labelPais2.setBounds(460, 400, 150, 20);
         janela.add(labelPais2);
-        // Adicionando um campo de complemento
+        
         JTextField campoComplemento = new JTextField();
-        campoComplemento.setBounds(500, 720, 320, 30);
+        campoComplemento.setBounds(460, 420, 300, 25);
         janela.add(campoComplemento);
 
-
+        // Sexo e Estado Civil
         JLabel labelSexo = new JLabel("Sexo:");
-        labelSexo.setBounds(850, 680, 150, 40);
+        labelSexo.setBounds(780, 400, 150, 20);
         janela.add(labelSexo);
-        // Adicionando um campo de sexo
+        
         JComboBox<String> comboBoxSexo = new JComboBox<>();
-        comboBoxSexo.setBounds(850, 720, 150, 30);
+        comboBoxSexo.setBounds(780, 420, 150, 25);
         comboBoxSexo.addItem("Selecione o sexo");
         comboBoxSexo.addItem("Masculino");
         comboBoxSexo.addItem("Feminino");
@@ -222,11 +228,11 @@ public class App {
         janela.add(comboBoxSexo);
 
         JLabel labelEstadoCivil = new JLabel("Estado Civil:");
-        labelEstadoCivil.setBounds(1020, 680, 180, 40);
+        labelEstadoCivil.setBounds(950, 400, 180, 20);
         janela.add(labelEstadoCivil);
-        // Adicionando um campo de estado civil
+        
         JComboBox<String> comboBoxEstadoCivil = new JComboBox<>();
-        comboBoxEstadoCivil.setBounds(1020, 720, 180, 30);
+        comboBoxEstadoCivil.setBounds(950, 420, 180, 25);
         comboBoxEstadoCivil.addItem("Selecione o estado civil");
         comboBoxEstadoCivil.addItem("Solteiro(a)");
         comboBoxEstadoCivil.addItem("Casado(a)");
@@ -235,21 +241,21 @@ public class App {
         comboBoxEstadoCivil.addItem("União Estável");
         janela.add(comboBoxEstadoCivil);
 
+        // Termos
         JCheckBox checkBoxTermos = new JCheckBox("Aceito os termos de uso");
-        checkBoxTermos.setBounds(100, 760, 200, 30);
+        checkBoxTermos.setBounds(20, 460, 200, 25);
         janela.add(checkBoxTermos);
 
-
-
-        // Adicionando uma area de texto para exibir informações
+        // Área de texto
         JTextArea areaTexto = new JTextArea();
-        areaTexto.setBounds(515, 800, 290, 80);
+        areaTexto.setBounds(450, 460, 300, 60);
         janela.add(areaTexto);
 
-        // Adicionando botões
-        // Botão de limpar
+        // Botões
         JButton botaoLimpar = new JButton("Limpar");
-        botaoLimpar.setBounds(85, 800, 200, 50);
+        botaoLimpar.setBounds(20, 500, 200, 30);
+        botaoLimpar.setBackground(orangeTheme);
+        botaoLimpar.setForeground(Color.WHITE);
         janela.add(botaoLimpar);
         botaoLimpar.addActionListener(new ActionListener() {
             @Override
@@ -278,9 +284,10 @@ public class App {
             }
         });
 
-        //Botão de login
         JButton botaologin = new JButton("Login");
-        botaologin.setBounds(300, 800, 200, 50);
+        botaologin.setBounds(240, 500, 200, 30);
+        botaologin.setBackground(orangeTheme);
+        botaologin.setForeground(Color.WHITE);
         janela.add(botaologin);
         botaologin.addActionListener(new ActionListener() {
             @Override
@@ -309,10 +316,10 @@ public class App {
             }
         });
 
-        // Configurando a janela
+        // Configuração final da janela
         janela.setLayout(null);
-        janela.setBounds(0, 0, 1600, 1000);
+        janela.setSize(1200, 600);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janela.setVisible(true);
-}
+    }
 }
